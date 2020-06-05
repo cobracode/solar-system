@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DynamicDebug|Win32">
+      <Configuration>DynamicDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DynamicDebug|x64">
+      <Configuration>DynamicDebug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DynamicRelease|Win32">
+      <Configuration>DynamicRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DynamicRelease|x64">
+      <Configuration>DynamicRelease</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="StaticDebug|Win32">
+      <Configuration>StaticDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="StaticDebug|x64">
+      <Configuration>StaticDebug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="StaticRelease|Win32">
+      <Configuration>StaticRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="StaticRelease|x64">
+      <Configuration>StaticRelease</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4FBB25E7-B491-44D1-8B09-33D90E3FED06}</ProjectGuid>
+    <RootNamespace>MyApp</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='StaticDebug|Win32'">
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='StaticDebug|x64'">
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='StaticRelease|Win32'">
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='StaticRelease|x64'">
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='DynamicDebug|Win32'">
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='DynamicDebug|x64'">
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='DynamicRelease|Win32'">
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='DynamicRelease|x64'">
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='DynamicDebug|Win32'">
+    <Import Project="..\VSProps\CommonOptions.props" />
+    <Import Project="..\VSProps\Debug.props" />
+    <Import Project="..\VSProps\DynamicDebug.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='DynamicDebug|x64'">
+    <Import Project="..\VSProps\CommonOptions.props" />
+    <Import Project="..\VSProps\Debug.props" />
+    <Import Project="..\VSProps\DynamicDebug.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='DynamicRelease|Win32'">
+    <Import Project="..\VSProps\CommonOptions.props" />
+    <Import Project="..\VSProps\Release.props" />
+    <Import Project="..\VSProps\DynamicRelease.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='DynamicRelease|x64'">
+    <Import Project="..\VSProps\CommonOptions.props" />
+    <Import Project="..\VSProps\Release.props" />
+    <Import Project="..\VSProps\DynamicRelease.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='StaticDebug|Win32'">
+    <Import Project="..\VSProps\CommonOptions.props" />
+    <Import Project="..\VSProps\Debug.props" />
+    <Import Project="..\VSProps\StaticDebug.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='StaticDebug|x64'">
+    <Import Project="..\VSProps\CommonOptions.props" />
+    <Import Project="..\VSProps\Debug.props" />
+    <Import Project="..\VSProps\StaticDebug.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='StaticRelease|Win32'">
+    <Import Project="..\VSProps\CommonOptions.props" />
+    <Import Project="..\VSProps\Release.props" />
+    <Import Project="..\VSProps\StaticRelease.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='StaticRelease|x64'">
+    <Import Project="..\VSProps\CommonOptions.props" />
+    <Import Project="..\VSProps\Release.props" />
+    <Import Project="..\VSProps\StaticRelease.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.50727.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)inc;$(SolutionDir)inc\SwissEphemerisStatic</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>USE_DLL</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\SwissEphemeris\bin</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SwissEphemeris_$(Platform)_$(Configuration).lib</AdditionalDependencies>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)inc;$(SolutionDir)inc\SwissEphemerisStatic</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>USE_DLL</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\SwissEphemeris\bin</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SwissEphemeris_$(Platform)_$(Configuration).lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DynamicDebug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)inc;$(SolutionDir)inc\SwissEphemerisStatic</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>USE_DLL</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\SwissEphemeris\bin</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SwissEphemeris_$(Platform)_$(Configuration).lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DynamicRelease|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)inc;$(SolutionDir)inc\SwissEphemerisStatic</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>USE_DLL</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\SwissEphemeris\bin</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SwissEphemeris_$(Platform)_$(Configuration).lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='StaticDebug|x64'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\SwissEphemeris\bin</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SwissEphemeris_$(Platform)_$(Configuration).lib</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)inc;$(SolutionDir)inc\SwissEphemerisStatic</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>USE_DLL</PreprocessorDefinitions>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='StaticRelease|x64'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\SwissEphemeris\bin</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SwissEphemeris_$(Platform)_$(Configuration).lib</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)inc;$(SolutionDir)inc\SwissEphemerisStatic</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>USE_DLL</PreprocessorDefinitions>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DynamicDebug|x64'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\SwissEphemeris\bin</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SwissEphemeris_$(Platform)_$(Configuration).lib</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)inc;$(SolutionDir)inc\SwissEphemerisStatic</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>USE_DLL</PreprocessorDefinitions>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DynamicRelease|x64'">
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\SwissEphemeris\bin</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SwissEphemeris_$(Platform)_$(Configuration).lib</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)inc;$(SolutionDir)inc\SwissEphemerisStatic</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>USE_DLL</PreprocessorDefinitions>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AspectType.cpp" />
+    <ClCompile Include="src\AstrologyTool.cpp" />
+    <ClCompile Include="src\Body.cpp" />
+    <ClCompile Include="src\Calculate.cpp" />
+    <ClCompile Include="src\CalculatedAspect.cpp" />
+    <ClCompile Include="src\DegMinSec.cpp" />
+    <ClCompile Include="src\Logger.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\MyDate.cpp" />
+    <ClCompile Include="src\SwissEphemerisInterface.cpp" />
+    <ClCompile Include="src\ZodiacPosition.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="inc\AspectType.h" />
+    <ClInclude Include="inc\AstrologyTool.h" />
+    <ClInclude Include="inc\Body.h" />
+    <ClInclude Include="inc\Calculate.h" />
+    <ClInclude Include="inc\CalculatedAspect.h" />
+    <ClInclude Include="inc\DegMinSec.h" />
+    <ClInclude Include="inc\Logger.h" />
+    <ClInclude Include="inc\MiscDefinitions.h" />
+    <ClInclude Include="inc\MyDate.h" />
+    <ClInclude Include="inc\SwissEphemerisInterface.h" />
+    <ClInclude Include="inc\ZodiacPosition.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

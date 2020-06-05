@@ -1,0 +1,10 @@
+# folders
+.vscode/
+
+
+# files
+
+*.txt
+*.suo
+*.filters
+*.user
